@@ -1,8 +1,8 @@
 interface Props {
   task: {
-    name: string;
-    startDate: string;
-    deadline: string;
+    name?: string;
+    startDate?: string;
+    deadline?: string;
   };
 }
 const CreateTask = ({ task }: Props) => {

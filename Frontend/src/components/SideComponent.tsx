@@ -1,13 +1,9 @@
 // import { useState } from "react";
 
-import { useState } from "react";
+import Popup from "reactjs-popup";
 
 const SideComponent = () => {
-  const [projects, setProjects] = useState([
-    "Free Lance Project",
-    "SBI Outsource",
-  ]);
-
+  const projects = ["Free Lance Project", "SBI Outsource"];
   return (
     <div>
       <div className="w-60 h-[1024px] bg-white shadow ">
@@ -43,9 +39,44 @@ const SideComponent = () => {
         ))}
 
         <hr className="mt-3" />
-        <div className="text-blue-600 text-xs my-4 mx-12 font-normal font-['Nunito Sans'] leading-tight">
-          + Add new Project
-        </div>
+
+        <Popup
+          modal
+          trigger={
+            <button className="text-blue-600 text-xs my-4 mx-12 font-normal font-['Nunito Sans'] leading-tight">
+              <div className="text-pink-600 text-xs font-normal font-['Nunito Sans'] leading-tight">
+                + Add new Project
+              </div>
+            </button>
+          }
+        >
+          <form>
+            <div className="self-stretch h-[68px] flex-col justify-start items-start gap-1 flex">
+              <div className="text-neutral-800 text-xs font-normal font-['Nunito Sans'] leading-tight">
+                Name of the Project
+              </div>
+              <input
+                id="1"
+                type="text"
+                className="self-stretch h-11 px-3 py-1 bg-white rounded-lg border border-neutral-300 justify-between items-center inline-flex"
+                placeholder="Project Name"
+                name="taskName"
+              />
+            </div>
+            <div className="flex-col items-end">
+              <button
+                type="submit"
+                value="submit"
+                className="px-4 py-1 border mr-5 float-end bg-blue-500 hover:bg-blue-400 rounded-lg text-white"
+              >
+                Add
+              </button>
+              <button className="ml-5 float-end mr-5 bg-blue-100 hover:bg-blue-200 px-4 py-1 rounded text-blue-700">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </Popup>
       </div>
     </div>
   );

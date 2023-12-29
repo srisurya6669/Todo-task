@@ -4,8 +4,7 @@ const { sequelize } = require('../db/postgres')
 const Task = sequelize.define("Task", {
     name: {
         type: DataTypes.TEXT,
-        allowNull: false,
-        unique: true
+        allowNull: false
     },
     startDate: {
         type: DataTypes.TEXT,

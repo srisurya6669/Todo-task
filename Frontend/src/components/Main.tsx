@@ -1,17 +1,16 @@
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import CreateTask from "./CreateTask";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import AddTaskForm from "./AddTaskForm";
 
 const MainComponent = () => {
-  const [toDo, setToDo] = useState([
+  const [toDo] = useState([
     { name: "Todo", startDate: "1/12/23", deadline: "6/12/23" },
   ]);
-  const [progress, setProgress] = useState([]);
-  const [review, setReview] = useState([]);
-  const [completed, setCompleted] = useState([]);
-  const [showForm, setShowForm] = useState(false);
+  const [progress] = useState([]);
+  const [review] = useState([]);
+  const [completed] = useState([]);
 
   return (
     <div>
@@ -36,11 +35,18 @@ const MainComponent = () => {
           <div className="flex-col justify-start items-start gap-6 flex">
             <div className="w-[270px] h-8 px-2 py-2.5 bg-violet-100 rounded-lg justify-center items-center gap-1 inline-flex">
               <div className="w-3 h-3 relative"></div>
-              <div className="px-2 justify-center items-center gap-2.5 flex">
-                <div className="text-blue-600 text-xs font-normal font-['Nunito Sans'] leading-tight">
-                  + Add new
-                </div>
-              </div>
+              <Popup
+                modal
+                trigger={
+                  <button className="px-2 justify-center items-center gap-2.5 flex btn">
+                    <div className="text-violet-600 text-xs font-normal font-['Nunito Sans'] leading-tight">
+                      + Add new
+                    </div>
+                  </button>
+                }
+              >
+                <AddTaskForm />
+              </Popup>
             </div>
           </div>
         </div>
@@ -64,11 +70,18 @@ const MainComponent = () => {
           <div className="flex-col justify-start items-start gap-6 flex">
             <div className="w-[270px] h-8 px-2 py-2.5 bg-pink-50 rounded-lg justify-center items-center gap-1 inline-flex">
               <div className="w-3 h-3 relative"></div>
-              <div className="px-2 justify-center items-center gap-2.5 flex">
-                <div className="text-pink-500 text-xs font-normal font-['Nunito Sans'] leading-tight">
-                  + Add new
-                </div>
-              </div>
+              <Popup
+                modal
+                trigger={
+                  <button className="px-2 justify-center items-center gap-2.5 flex btn">
+                    <div className="text-pink-600 text-xs font-normal font-['Nunito Sans'] leading-tight">
+                      + Add new
+                    </div>
+                  </button>
+                }
+              >
+                <AddTaskForm />
+              </Popup>
             </div>
           </div>
         </div>
@@ -92,11 +105,18 @@ const MainComponent = () => {
           <div className="flex-col justify-start items-start gap-6 flex">
             <div className="w-[270px] h-8 px-2 py-2.5 bg-sky-50 rounded-lg justify-center items-center gap-1 inline-flex">
               <div className="w-3 h-3 relative"></div>
-              <div className="px-2 justify-center items-center gap-2.5 flex">
-                <div className="text-sky-400 text-xs font-normal font-['Nunito Sans'] leading-tight">
-                  + Add new
-                </div>
-              </div>
+              <Popup
+                modal
+                trigger={
+                  <button className="px-2 justify-center items-center gap-2.5 flex btn">
+                    <div className="text-blue-600 text-xs font-normal font-['Nunito Sans'] leading-tight">
+                      + Add new
+                    </div>
+                  </button>
+                }
+              >
+                <AddTaskForm />
+              </Popup>
             </div>
           </div>
         </div>
@@ -123,10 +143,7 @@ const MainComponent = () => {
               <Popup
                 modal
                 trigger={
-                  <button
-                    onClick={() => setShowForm(true)}
-                    className="px-2 justify-center items-center gap-2.5 flex btn"
-                  >
+                  <button className="px-2 justify-center items-center gap-2.5 flex btn">
                     <div className="text-green-600 text-xs font-normal font-['Nunito Sans'] leading-tight">
                       + Add new
                     </div>
