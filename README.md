@@ -5,6 +5,6 @@
 <p>Use <b>npm i </b>to install dependencies.</p>
 <p>use <b>npm run dev</b> to start the frontend application.</p>
 <h2>Backend</h2>
-<p>use <b>cd backend</b> command to go to backend part.</p>
+<p>use <b>cd Backend</b> command to go to backend part.</p>
 <p>use <b>npm i </b> to install dependencies.</p>
 <p><b>use npm run start</b> to start the server.</p>
